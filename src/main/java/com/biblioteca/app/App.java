@@ -1,4 +1,4 @@
-package com.app;
+package com.biblioteca.app;
 
 public class App {
 

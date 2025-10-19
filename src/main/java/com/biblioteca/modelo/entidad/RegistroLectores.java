@@ -1,4 +1,4 @@
-package com.lector;
+package com.biblioteca.modelo.entidad;
 
 import java.util.ArrayList;
 

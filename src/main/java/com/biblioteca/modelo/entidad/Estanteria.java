@@ -1,4 +1,4 @@
-package com.estanteria;
+package com.biblioteca.modelo.entidad;
 
 public class Estanteria {
     private Libro[] compartimentos = new Libro[30];
@@ -8,7 +8,7 @@ public class Estanteria {
         return true;
     }
 
-    public Libro buscarEstanteria (int codigo) {
+    public Libro buscarEstanteria(int codigo) {
         return null;
     }
 

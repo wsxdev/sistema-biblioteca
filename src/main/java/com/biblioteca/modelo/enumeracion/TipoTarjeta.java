@@ -1,4 +1,4 @@
-package com.tarjeta;
+package com.biblioteca.modelo.enumeracion;
 
 public enum TipoTarjeta {
     LECTOR,

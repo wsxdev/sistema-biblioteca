@@ -1,6 +1,6 @@
-package com.lector;
+package com.biblioteca.modelo.entidad;
 
-import com.tarjeta.TipoTarjeta;
+import com.biblioteca.modelo.enumeracion.TipoTarjeta;
 
 public class Lector {
     private String cedula;
