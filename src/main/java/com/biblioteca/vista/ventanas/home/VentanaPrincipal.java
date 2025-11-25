@@ -29,138 +29,173 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         bgjPanel = new javax.swing.JPanel();
-        menujPanel = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        BGmenujPanel = new javax.swing.JPanel();
+        TextInicioMenujLabel = new javax.swing.JLabel();
+        TextLectoresMenujLabel1 = new javax.swing.JLabel();
+        TextLibrosMenujLabel1 = new javax.swing.JLabel();
+        TextConfiguracionMenujLabel1 = new javax.swing.JLabel();
+        TextAcercaDeMenujLabel = new javax.swing.JLabel();
+        BGINICIOjLabel = new javax.swing.JLabel();
+        BGLectoresjLabel = new javax.swing.JLabel();
+        BGLibrosjLabel = new javax.swing.JLabel();
+        BGConfiguracionjLabel = new javax.swing.JLabel();
+        BGAboutjLabel = new javax.swing.JLabel();
+        BGPANELjPanel = new javax.swing.JPanel();
+        BG_IMAGEN_BIBLIOTECAjLabel = new javax.swing.JLabel();
+        TextConfiguracionjLabel = new javax.swing.JLabel();
+        TextLibrosjLabel = new javax.swing.JLabel();
+        TextLectoresjLabel = new javax.swing.JLabel();
+        BGTextLectoresjLabel = new javax.swing.JLabel();
+        BGTextLibrosjLabel = new javax.swing.JLabel();
+        BGTextConfiguracionjLabel = new javax.swing.JLabel();
+        BGToolBarjPanel = new javax.swing.JPanel();
+        BTN_BURGERjLabel = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        BGIconNotificaionjLabel = new javax.swing.JLabel();
+        BGIconUserjLabel = new javax.swing.JLabel();
+        BGBarraBusquedajLabel = new javax.swing.JLabel();
+        TextTitleBibliotecajLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bgjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        menujPanel.setBackground(new java.awt.Color(28, 142, 158));
+        BGmenujPanel.setBackground(new java.awt.Color(28, 142, 158));
+        BGmenujPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
+        TextInicioMenujLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TextInicioMenujLabel.setForeground(new java.awt.Color(255, 255, 255));
+        TextInicioMenujLabel.setText("INICIO");
+        BGmenujPanel.add(TextInicioMenujLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 70, 40));
 
-        javax.swing.GroupLayout menujPanelLayout = new javax.swing.GroupLayout(menujPanel);
-        menujPanel.setLayout(menujPanelLayout);
-        menujPanelLayout.setHorizontalGroup(
-            menujPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menujPanelLayout.createSequentialGroup()
-                .addContainerGap(47, Short.MAX_VALUE)
-                .addComponent(jLabel13)
-                .addGap(91, 91, 91))
-            .addGroup(menujPanelLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        menujPanelLayout.setVerticalGroup(
-            menujPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menujPanelLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel13)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel12)
-                .addContainerGap(336, Short.MAX_VALUE))
-        );
+        TextLectoresMenujLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TextLectoresMenujLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        TextLectoresMenujLabel1.setText("LECTORES");
+        BGmenujPanel.add(TextLectoresMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 70, 30));
 
-        bgjPanel.add(menujPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 258, 420));
+        TextLibrosMenujLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TextLibrosMenujLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        TextLibrosMenujLabel1.setText("LIBROS");
+        BGmenujPanel.add(TextLibrosMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 70, 30));
 
-        jPanel.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        TextConfiguracionMenujLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        TextConfiguracionMenujLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        TextConfiguracionMenujLabel1.setText("CONFIGURACION");
+        BGmenujPanel.add(TextConfiguracionMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 120, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/imagenBiblioteca.png"))); // NOI18N
-        jPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        TextAcercaDeMenujLabel.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        TextAcercaDeMenujLabel.setForeground(new java.awt.Color(255, 255, 255));
+        TextAcercaDeMenujLabel.setText("ACERCA DE");
+        BGmenujPanel.add(TextAcercaDeMenujLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 80, 40));
 
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(29, 114, 129));
-        jLabel14.setText("CONFIGURACIÒN");
-        jPanel.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, -1));
+        BGINICIOjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
+        BGmenujPanel.add(BGINICIOjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 38, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(29, 114, 129));
-        jLabel15.setText("LIBROS");
-        jPanel.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+        BGLectoresjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
+        BGmenujPanel.add(BGLectoresjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 84, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(29, 114, 129));
-        jLabel7.setText("LECTORES");
-        jPanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+        BGLibrosjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
+        BGmenujPanel.add(BGLibrosjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 177, -1, -1));
 
-        jLabel4.setForeground(new java.awt.Color(29, 114, 129));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadro.png"))); // NOI18N
-        jPanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 140, 40));
+        BGConfiguracionjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
+        BGmenujPanel.add(BGConfiguracionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 131, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadro.png"))); // NOI18N
-        jPanel.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 140, 40));
+        BGAboutjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
+        BGmenujPanel.add(BGAboutjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 217, -1, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadro.png"))); // NOI18N
-        jPanel.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 160, 40));
+        bgjPanel.add(BGmenujPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 258, 420));
 
-        bgjPanel.add(jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 640, 420));
+        BGPANELjPanel.setBackground(new java.awt.Color(255, 255, 255));
+        BGPANELjPanel.setPreferredSize(new java.awt.Dimension(640, 420));
+        BGPANELjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        BG_IMAGEN_BIBLIOTECAjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/imagenBiblioteca.png"))); // NOI18N
+        BGPANELjPanel.add(BG_IMAGEN_BIBLIOTECAjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menu.png"))); // NOI18N
+        TextConfiguracionjLabel.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        TextConfiguracionjLabel.setForeground(new java.awt.Color(29, 114, 129));
+        TextConfiguracionjLabel.setText("CONFIGURACIÒN");
+        BGPANELjPanel.add(TextConfiguracionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 270, -1, 20));
+
+        TextLibrosjLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TextLibrosjLabel.setForeground(new java.awt.Color(29, 114, 129));
+        TextLibrosjLabel.setText("LIBROS");
+        BGPANELjPanel.add(TextLibrosjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 270, -1, -1));
+
+        TextLectoresjLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TextLectoresjLabel.setForeground(new java.awt.Color(29, 114, 129));
+        TextLectoresjLabel.setText("LECTORES");
+        BGPANELjPanel.add(TextLectoresjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, -1, -1));
+
+        BGTextLectoresjLabel.setForeground(new java.awt.Color(29, 114, 129));
+        BGTextLectoresjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadro.png"))); // NOI18N
+        BGPANELjPanel.add(BGTextLectoresjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 140, 40));
+
+        BGTextLibrosjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadro.png"))); // NOI18N
+        BGPANELjPanel.add(BGTextLibrosjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 140, 40));
+
+        BGTextConfiguracionjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cuadro.png"))); // NOI18N
+        BGPANELjPanel.add(BGTextConfiguracionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, 160, 40));
+
+        bgjPanel.add(BGPANELjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 80, 640, 420));
+
+        BGToolBarjPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        BTN_BURGERjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/menu.png"))); // NOI18N
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/moneda.png"))); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/notifi.png"))); // NOI18N
+        BGIconNotificaionjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/notifi.png"))); // NOI18N
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user.png"))); // NOI18N
+        BGIconUserjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user.png"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buquedaBarra.png"))); // NOI18N
+        BGBarraBusquedajLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/buquedaBarra.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        TextTitleBibliotecajLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        TextTitleBibliotecajLabel.setForeground(new java.awt.Color(29, 114, 129));
+        TextTitleBibliotecajLabel.setText("BIBLIOTECA");
+
+        javax.swing.GroupLayout BGToolBarjPanelLayout = new javax.swing.GroupLayout(BGToolBarjPanel);
+        BGToolBarjPanel.setLayout(BGToolBarjPanelLayout);
+        BGToolBarjPanelLayout.setHorizontalGroup(
+            BGToolBarjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BGToolBarjPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(BTN_BURGERjLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TextTitleBibliotecajLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addComponent(BGBarraBusquedajLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel9)
+                .addComponent(BGIconNotificaionjLabel)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel11)
+                .addComponent(BGIconUserjLabel)
                 .addGap(39, 39, 39))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+        BGToolBarjPanelLayout.setVerticalGroup(
+            BGToolBarjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BTN_BURGERjLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(BGToolBarjPanelLayout.createSequentialGroup()
+                .addGroup(BGToolBarjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BGToolBarjPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(BGBarraBusquedajLabel))
+                    .addGroup(BGToolBarjPanelLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
+                        .addGroup(BGToolBarjPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BGIconNotificaionjLabel)
                             .addComponent(jLabel10)
-                            .addComponent(jLabel11))))
+                            .addComponent(BGIconUserjLabel)))
+                    .addGroup(BGToolBarjPanelLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(TextTitleBibliotecajLabel)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        bgjPanel.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
+        bgjPanel.add(BGToolBarjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 80));
 
         getContentPane().add(bgjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 500));
 
@@ -193,23 +228,32 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BGAboutjLabel;
+    private javax.swing.JLabel BGBarraBusquedajLabel;
+    private javax.swing.JLabel BGConfiguracionjLabel;
+    private javax.swing.JLabel BGINICIOjLabel;
+    private javax.swing.JLabel BGIconNotificaionjLabel;
+    private javax.swing.JLabel BGIconUserjLabel;
+    private javax.swing.JLabel BGLectoresjLabel;
+    private javax.swing.JLabel BGLibrosjLabel;
+    private javax.swing.JPanel BGPANELjPanel;
+    private javax.swing.JLabel BGTextConfiguracionjLabel;
+    private javax.swing.JLabel BGTextLectoresjLabel;
+    private javax.swing.JLabel BGTextLibrosjLabel;
+    private javax.swing.JPanel BGToolBarjPanel;
+    private javax.swing.JLabel BG_IMAGEN_BIBLIOTECAjLabel;
+    private javax.swing.JPanel BGmenujPanel;
+    private javax.swing.JLabel BTN_BURGERjLabel;
+    private javax.swing.JLabel TextAcercaDeMenujLabel;
+    private javax.swing.JLabel TextConfiguracionMenujLabel1;
+    private javax.swing.JLabel TextConfiguracionjLabel;
+    private javax.swing.JLabel TextInicioMenujLabel;
+    private javax.swing.JLabel TextLectoresMenujLabel1;
+    private javax.swing.JLabel TextLectoresjLabel;
+    private javax.swing.JLabel TextLibrosMenujLabel1;
+    private javax.swing.JLabel TextLibrosjLabel;
+    private javax.swing.JLabel TextTitleBibliotecajLabel;
     private javax.swing.JPanel bgjPanel;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel menujPanel;
     // End of variables declaration//GEN-END:variables
 }

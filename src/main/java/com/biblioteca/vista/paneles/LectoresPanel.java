@@ -26,19 +26,21 @@ public class LectoresPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TitleRegistroLectoresjLabel = new javax.swing.JLabel();
+        TablajScrollPane = new javax.swing.JScrollPane();
+        TablaRLjTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(29, 114, 129));
-        jLabel1.setText("REGISTRO DE LECTORES");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+        TitleRegistroLectoresjLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        TitleRegistroLectoresjLabel.setForeground(new java.awt.Color(29, 114, 129));
+        TitleRegistroLectoresjLabel.setText("REGISTRO DE LECTORES");
+        add(TitleRegistroLectoresjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablajScrollPane.setPreferredSize(new java.awt.Dimension(640, 420));
+
+        TablaRLjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -57,15 +59,15 @@ public class LectoresPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        TablajScrollPane.setViewportView(TablaRLjTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 640, 350));
+        add(TablajScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, -1, 350));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable TablaRLjTable;
+    private javax.swing.JScrollPane TablajScrollPane;
+    private javax.swing.JLabel TitleRegistroLectoresjLabel;
     // End of variables declaration//GEN-END:variables
 }

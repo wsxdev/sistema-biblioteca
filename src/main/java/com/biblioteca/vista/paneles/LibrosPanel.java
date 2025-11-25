@@ -26,22 +26,22 @@ public class LibrosPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        BGjPanel = new javax.swing.JPanel();
+        TitleRegistroLibrojLabel = new javax.swing.JLabel();
+        TablaScrollPane1 = new javax.swing.JScrollPane();
+        TablaRegistroLibrosjTable = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        BGjPanel.setBackground(new java.awt.Color(255, 255, 255));
+        BGjPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(29, 114, 129));
-        jLabel1.setText("REGISTRO DE LIBROS");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
+        TitleRegistroLibrojLabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        TitleRegistroLibrojLabel.setForeground(new java.awt.Color(29, 114, 129));
+        TitleRegistroLibrojLabel.setText("REGISTRO DE LIBROS");
+        BGjPanel.add(TitleRegistroLibrojLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaRegistroLibrosjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -49,7 +49,7 @@ public class LibrosPanel extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Còdigo", "Titulo", "Genero", "Autor", "Estado"
+                "Código", "Titulo", "Genero", "Autor", "Estado"
             }
         ) {
             Class[] types = new Class [] {
@@ -60,18 +60,18 @@ public class LibrosPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        TablaScrollPane1.setViewportView(TablaRegistroLibrosjTable);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 640, 350));
+        BGjPanel.add(TablaScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 640, 350));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 420));
+        add(BGjPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 420));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JPanel BGjPanel;
+    private javax.swing.JTable TablaRegistroLibrosjTable;
+    private javax.swing.JScrollPane TablaScrollPane1;
+    private javax.swing.JLabel TitleRegistroLibrojLabel;
     // End of variables declaration//GEN-END:variables
 }
