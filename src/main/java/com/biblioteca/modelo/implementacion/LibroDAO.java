@@ -1,5 +1,7 @@
 package com.biblioteca.modelo.implementacion;
 
-public class LibroDAO {
+import com.biblioteca.modelo.interfaz.ILibroDAO;
+
+public class LibroDAO implements ILibroDAO {
 
 }

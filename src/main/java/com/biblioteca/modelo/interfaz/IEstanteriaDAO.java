@@ -1,5 +1,10 @@
 package com.biblioteca.modelo.interfaz;
 
-public interface IEstanteriaDAO {
+import com.biblioteca.modelo.entidad.Libro;
 
+public interface IEstanteriaDAO {
+    boolean agregarLibros(Libro libro);
+    Libro[] buscarLibroPorCompartimento(int codigo);
+    void listarPosicionesLibres();
+    void listarPosicionesOcupadas();
 }

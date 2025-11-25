@@ -3,7 +3,7 @@ package com.biblioteca.modelo.entidad;
 import java.util.ArrayList;
 
 public class RegistroLectores {
-    private ArrayList<Lector> lector;
+    private ArrayList<Lector> lectores;
 
     public boolean depurarDuplicados(String cedula) {
         return true;
