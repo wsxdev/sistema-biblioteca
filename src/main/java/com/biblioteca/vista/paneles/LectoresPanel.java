@@ -23,13 +23,20 @@ public class LectoresPanel extends javax.swing.JPanel {
      */
     public LectoresPanel() {
         initComponents();
+        // USAR BORDERLAYOUT PARA EVITAR SOLAPAMIENTOS ENTRE TABLA Y BOTONES
+        removeAll();
+        setLayout(new java.awt.BorderLayout());
         controlador = new com.biblioteca.controlador.RegistroLectoresControlador();
         modeloTabla = (javax.swing.table.DefaultTableModel) TablaRLjTable.getModel();
-        agregarControlesAdicionales();
+        // REUBICAR COMPONENTES GENERADOS: TITULO NORTE, TABLA EN CENTER
+        add(TitleRegistroLectoresjLabel, java.awt.BorderLayout.NORTH);
+        add(TablajScrollPane, java.awt.BorderLayout.CENTER);
+        add(crearPanelControles(), java.awt.BorderLayout.SOUTH);
+        refrescarTabla();
     }
 
-    private void agregarControlesAdicionales(){
-        javax.swing.JPanel panel = new javax.swing.JPanel();
+    private javax.swing.JPanel crearPanelControles(){
+        javax.swing.JPanel panel = new javax.swing.JPanel(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
         panel.setBackground(new java.awt.Color(255,255,255));
         panel.add(new javax.swing.JLabel("Cédula:")); txtCedula.setColumns(10); panel.add(txtCedula);
         panel.add(new javax.swing.JLabel("Barrio:")); txtBarrio.setColumns(10); panel.add(txtBarrio);
@@ -47,8 +54,6 @@ public class LectoresPanel extends javax.swing.JPanel {
         panel.add(btnAgregar); panel.add(btnEliminar); panel.add(btnBuscar); panel.add(btnFiltrar);
         panel.add(btnOrdenar); panel.add(btnDepurar); panel.add(btnConteo); panel.add(btnListarFinal);
 
-        add(panel, java.awt.BorderLayout.SOUTH);
-
         btnAgregar.addActionListener(e -> {
             String ced = txtCedula.getText().trim();
             String barrio = txtBarrio.getText().trim();
@@ -56,7 +61,7 @@ public class LectoresPanel extends javax.swing.JPanel {
             if(ced.isEmpty()||barrio.isEmpty()||hora.isEmpty()){ JOptionPane.showMessageDialog(this, "Rellene todos los campos"); return; }
             com.biblioteca.modelo.entidad.Lector l = new com.biblioteca.modelo.entidad.Lector(ced,barrio,hora);
             boolean ok = controlador.registrar(l);
-            if(ok){ modeloTabla.addRow(new Object[]{ced,barrio,hora}); } else { JOptionPane.showMessageDialog(this, "No se pudo agregar. Cédula posiblemente repetida."); }
+            if(ok){ modeloTabla.addRow(new Object[]{ced,barrio,hora}); limpiarCamposLectores(); } else { JOptionPane.showMessageDialog(this, "No se pudo agregar. Cédula posiblemente repetida."); }
         });
 
         btnEliminar.addActionListener(e -> {
@@ -103,6 +108,12 @@ public class LectoresPanel extends javax.swing.JPanel {
             modeloTabla.setRowCount(0);
             for(com.biblioteca.modelo.entidad.Lector lt: list) modeloTabla.addRow(new Object[]{lt.getCedula(), lt.getBarrio(), lt.getHoraLlegada()});
         });
+
+        return panel;
+    }
+
+    private void limpiarCamposLectores(){
+        txtCedula.setText(""); txtBarrio.setText(""); txtHora.setText("");
     }
 
     private void refrescarTabla(){

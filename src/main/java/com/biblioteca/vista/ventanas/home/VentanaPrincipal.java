@@ -152,7 +152,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         TextLibrosMenujLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         TextLibrosMenujLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        TextLibrosMenujLabel1.setText("CONFIGURACIÒN");
+        TextLibrosMenujLabel1.setText("TIPO DE TARJETA");
         BGmenujPanel.add(TextLibrosMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, 30));
 
         TextConfiguracionMenujLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
