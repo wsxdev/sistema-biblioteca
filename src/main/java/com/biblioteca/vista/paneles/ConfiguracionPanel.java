@@ -53,7 +53,7 @@ public class ConfiguracionPanel extends javax.swing.JPanel {
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Inglés", "Francés", "Alemán", "Chino Mandarín", " " }));
         jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 420));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 620, 380));
     }// </editor-fold>//GEN-END:initComponents
 
 

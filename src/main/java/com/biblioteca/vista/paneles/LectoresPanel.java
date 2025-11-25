@@ -4,17 +4,111 @@
  */
 package com.biblioteca.vista.paneles;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ibarr
  */
 public class LectoresPanel extends javax.swing.JPanel {
 
+    private final com.biblioteca.controlador.RegistroLectoresControlador controlador;
+    private final javax.swing.table.DefaultTableModel modeloTabla;
+    private final javax.swing.JTextField txtCedula = new javax.swing.JTextField();
+    private final javax.swing.JTextField txtBarrio = new javax.swing.JTextField();
+    private final javax.swing.JTextField txtHora = new javax.swing.JTextField();
+
     /**
      * Creates new form LectoresPanel
      */
     public LectoresPanel() {
         initComponents();
+        controlador = new com.biblioteca.controlador.RegistroLectoresControlador();
+        modeloTabla = (javax.swing.table.DefaultTableModel) TablaRLjTable.getModel();
+        agregarControlesAdicionales();
+    }
+
+    private void agregarControlesAdicionales(){
+        javax.swing.JPanel panel = new javax.swing.JPanel();
+        panel.setBackground(new java.awt.Color(255,255,255));
+        panel.add(new javax.swing.JLabel("Cédula:")); txtCedula.setColumns(10); panel.add(txtCedula);
+        panel.add(new javax.swing.JLabel("Barrio:")); txtBarrio.setColumns(10); panel.add(txtBarrio);
+        panel.add(new javax.swing.JLabel("Hora (HH:mm):")); txtHora.setColumns(6); panel.add(txtHora);
+
+        javax.swing.JButton btnAgregar = new javax.swing.JButton("Agregar");
+        javax.swing.JButton btnEliminar = new javax.swing.JButton("Eliminar");
+        javax.swing.JButton btnBuscar = new javax.swing.JButton("Buscar");
+        javax.swing.JButton btnFiltrar = new javax.swing.JButton("Filtrar barrio");
+        javax.swing.JButton btnOrdenar = new javax.swing.JButton("Ordenar por hora");
+        javax.swing.JButton btnDepurar = new javax.swing.JButton("Depurar duplicados");
+        javax.swing.JButton btnConteo = new javax.swing.JButton("Conteo por barrio");
+        javax.swing.JButton btnListarFinal = new javax.swing.JButton("Lista final ordenada");
+
+        panel.add(btnAgregar); panel.add(btnEliminar); panel.add(btnBuscar); panel.add(btnFiltrar);
+        panel.add(btnOrdenar); panel.add(btnDepurar); panel.add(btnConteo); panel.add(btnListarFinal);
+
+        add(panel, java.awt.BorderLayout.SOUTH);
+
+        btnAgregar.addActionListener(e -> {
+            String ced = txtCedula.getText().trim();
+            String barrio = txtBarrio.getText().trim();
+            String hora = txtHora.getText().trim();
+            if(ced.isEmpty()||barrio.isEmpty()||hora.isEmpty()){ JOptionPane.showMessageDialog(this, "Rellene todos los campos"); return; }
+            com.biblioteca.modelo.entidad.Lector l = new com.biblioteca.modelo.entidad.Lector(ced,barrio,hora);
+            boolean ok = controlador.registrar(l);
+            if(ok){ modeloTabla.addRow(new Object[]{ced,barrio,hora}); } else { JOptionPane.showMessageDialog(this, "No se pudo agregar. Cédula posiblemente repetida."); }
+        });
+
+        btnEliminar.addActionListener(e -> {
+            String ced = txtCedula.getText().trim();
+            if(ced.isEmpty()) { JOptionPane.showMessageDialog(this, "Ingrese cédula a eliminar"); return; }
+            boolean ok = controlador.retirarPorError(ced);
+            if(ok){ refrescarTabla(); } else { JOptionPane.showMessageDialog(this, "No se encontró cédula"); }
+        });
+
+        btnBuscar.addActionListener(e -> {
+            String ced = txtCedula.getText().trim();
+            if(ced.isEmpty()) { JOptionPane.showMessageDialog(this, "Ingrese cédula a buscar"); return; }
+            com.biblioteca.modelo.entidad.Lector l = controlador.buscar(ced);
+            if(l==null) JOptionPane.showMessageDialog(this, "No encontrado"); else JOptionPane.showMessageDialog(this, "Encontrado: " + l.getCedula() + " - " + l.getBarrio());
+        });
+
+        btnFiltrar.addActionListener(e -> {
+            String barrio = txtBarrio.getText().trim();
+            if(barrio.isEmpty()){ JOptionPane.showMessageDialog(this, "Ingrese barrio"); return; }
+            java.util.List<com.biblioteca.modelo.entidad.Lector> list = controlador.filtrarPorBarrio(barrio);
+            modeloTabla.setRowCount(0);
+            for(com.biblioteca.modelo.entidad.Lector lt: list) modeloTabla.addRow(new Object[]{lt.getCedula(), lt.getBarrio(), lt.getHoraLlegada()});
+        });
+
+        btnOrdenar.addActionListener(e -> {
+            controlador.ordenarPorHora();
+            refrescarTabla();
+        });
+
+        btnDepurar.addActionListener(e -> {
+            controlador.depurarDuplicados();
+            refrescarTabla();
+        });
+
+        btnConteo.addActionListener(e -> {
+            java.util.Map<String,Integer> conteo = controlador.conteoPorBarrio();
+            StringBuilder sb = new StringBuilder();
+            for(String k: conteo.keySet()) sb.append(k).append(": ").append(conteo.get(k)).append("\n");
+            JOptionPane.showMessageDialog(this, sb.toString(), "Conteo por barrio", JOptionPane.INFORMATION_MESSAGE);
+        });
+
+        btnListarFinal.addActionListener(e -> {
+            java.util.List<com.biblioteca.modelo.entidad.Lector> list = controlador.listarOrdenados();
+            modeloTabla.setRowCount(0);
+            for(com.biblioteca.modelo.entidad.Lector lt: list) modeloTabla.addRow(new Object[]{lt.getCedula(), lt.getBarrio(), lt.getHoraLlegada()});
+        });
+    }
+
+    private void refrescarTabla(){
+        modeloTabla.setRowCount(0);
+        java.util.List<com.biblioteca.modelo.entidad.Lector> all = controlador.obtenerTodos();
+        for(com.biblioteca.modelo.entidad.Lector l: all) modeloTabla.addRow(new Object[]{l.getCedula(), l.getBarrio(), l.getHoraLlegada()});
     }
 
     /**

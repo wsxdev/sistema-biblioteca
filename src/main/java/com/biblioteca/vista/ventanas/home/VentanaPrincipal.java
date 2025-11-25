@@ -17,6 +17,82 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        // INTEGRAR PANELES DINAMICAMENTE
+        BGLectoresjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BGLibrosjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BGConfiguracionjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        BGLectoresjLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.LectoresPanel());
+            }
+        });
+        BGLibrosjLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.PanelEstanteria());
+            }
+        });
+        BGConfiguracionjLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.PanelTarjetas());
+            }
+        });
+
+        // ICON LABELS: vincular también los iconos
+        BGINICIOjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BGLectoresjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BGLibrosjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BGConfiguracionjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BGAboutjLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        BGINICIOjLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.PanelInicio());
+            }
+        });
+        BGAboutjLabel.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.PanelInicio());
+            }
+        });
+
+        // AÑADIR LISTENERS A LAS ETIQUETAS DE TEXTO DEL MENÚ (MEJOR PARA CLICK)
+        TextLectoresMenujLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextConfiguracionMenujLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        TextLibrosMenujLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        TextLectoresMenujLabel1.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.LectoresPanel());
+            }
+        });
+        // NOTA: LOS NOMBRES DE LAS ETIQUETAS ESTÁN INTERCAMBIADOS EN EL FORM; SE ASOCIAN A LAS FUNCIONES CORRESPONDIENTES
+        TextConfiguracionMenujLabel1.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.PanelEstanteria());
+            }
+        });
+        TextLibrosMenujLabel1.addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e){
+                mostrarPanel(new com.biblioteca.vista.paneles.PanelTarjetas());
+            }
+        });
+    }
+
+    private void mostrarPanel(javax.swing.JPanel panel){
+        BGPANELjPanel.removeAll();
+        BGPANELjPanel.setLayout(new java.awt.BorderLayout());
+        BGPANELjPanel.add(panel, java.awt.BorderLayout.CENTER);
+        BGPANELjPanel.revalidate();
+        BGPANELjPanel.repaint();
     }
 
     /**
@@ -76,13 +152,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         TextLibrosMenujLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         TextLibrosMenujLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        TextLibrosMenujLabel1.setText("LIBROS");
-        BGmenujPanel.add(TextLibrosMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 70, 30));
+        TextLibrosMenujLabel1.setText("CONFIGURACIÒN");
+        BGmenujPanel.add(TextLibrosMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, 30));
 
         TextConfiguracionMenujLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         TextConfiguracionMenujLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        TextConfiguracionMenujLabel1.setText("CONFIGURACION");
-        BGmenujPanel.add(TextConfiguracionMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 120, 40));
+        TextConfiguracionMenujLabel1.setText("LIBROS");
+        BGmenujPanel.add(TextConfiguracionMenujLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 120, 40));
 
         TextAcercaDeMenujLabel.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         TextAcercaDeMenujLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,7 +175,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BGmenujPanel.add(BGLibrosjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 177, -1, -1));
 
         BGConfiguracionjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
-        BGmenujPanel.add(BGConfiguracionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 131, -1, -1));
+        BGmenujPanel.add(BGConfiguracionjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 131, 130, -1));
 
         BGAboutjLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home.png"))); // NOI18N
         BGmenujPanel.add(BGAboutjLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 217, -1, -1));

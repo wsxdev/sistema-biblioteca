@@ -14,7 +14,8 @@ public class Libro {
         this.titulo = titulo;
         this.autor = autor;
         this.genero = genero;
-        this.estado = EstadoLibro.DISPONIBLE;
+        // ASIGNA EL ESTADO PASADO COMO PARÃMETRO (USAR ENUM EstadoLibro)
+        this.estado = estado == null ? EstadoLibro.DISPONIBLE : estado;
     }
 
     public int getCodigo() {
